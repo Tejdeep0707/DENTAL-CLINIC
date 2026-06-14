@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Experience premium dental care at SmileCare Dental. We offer expert teeth cleaning, implants, root canals, whitening, and braces using advanced medical technology. Book your appointment today!">
+    <meta name="keywords" content="dental clinic, dentist, teeth whitening, dental implants, root canal, teeth cleaning, braces, orthodontist, SmileCare Dental">
+    <meta name="author" content="SmileCare Dental">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SmileCare Dental | Premium Clinic & Advanced Care">
+    <meta property="og:description" content="SmileCare Dental provides exceptional, personalized dental treatments in a modern, caring environment. Book your visit online.">
+    <meta property="og:image" content="assets/images/about-clinic.png">
+
+    <title>SmileCare Dental | Premium Dental Clinic & Advanced Care</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- EmailJS Browser SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- Prevent Theme Flash -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+                document.documentElement.classList.add('dark-theme');
+                document.addEventListener('DOMContentLoaded', () => {
+                    document.body.classList.add('dark-theme');
+                });
+            }
+        })();
+    </script>
+</head>
+<body class="banner-visible">
+
+    <!-- Emergency Banner -->
+    <div class="emergency-banner" id="emergency-banner">
+        <span class="eb-pulse"></span>
+        🚨 <strong>Dental Emergency?</strong>&nbsp; Call us now: <a href="tel:+919876543210">+91 98765 43210</a> &mdash; We answer <strong>24/7</strong>
+        <button class="eb-close" id="eb-close-btn" aria-label="Dismiss banner">&times;</button>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <i data-lucide="activity" class="logo-icon"></i>
+                <span class="logo-text">SmileCare<span class="text-accent">.</span></span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link active">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="doctors.html" class="nav-link">Our Doctors</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">More <i data-lucide="chevron-down" class="dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="faqs.html" class="dropdown-item">FAQs</a></li>
+                            <li><a href="#contact" class="dropdown-item">Contact Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Navigation Actions Group -->
+            <div class="nav-actions">
+
+                <!-- CTA Button (Desktop) -->
+                <div class="nav-cta">
+                    <a href="#booking" class="btn btn-primary btn-sm">Book Appointment</a>
+                </div>
+
+                <!-- Hamburger Toggle (Mobile) -->
+                <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer">
+        <nav class="mobile-nav-menu">
+            <ul class="mobile-nav-list">
+                <li><a href="#" class="mobile-nav-link">Home</a></li>
+                <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+                <li><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
+                <li><a href="#about" class="mobile-nav-link">About Us</a></li>
+                <li><a href="doctors.html" class="mobile-nav-link">Our Doctors</a></li>
+                <li class="mobile-dropdown">
+                    <div class="mobile-dropdown-toggle">More <i data-lucide="chevron-down" class="mobile-dropdown-icon"></i></div>
+                    <ul class="mobile-dropdown-menu">
+                        <li><a href="faqs.html" class="mobile-nav-sublink">FAQs</a></li>
+                        <li><a href="#contact" class="mobile-nav-sublink">Contact Us</a></li>
+                    </ul>
+                </li>
+                <li><a href="#booking" class="mobile-nav-link btn btn-primary">Book Appointment</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="drawer-overlay"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="home">
+            <div class="container hero-grid">
+                <!-- Hero Content -->
+                <div class="hero-content reveal-init">
+                    <span class="hero-badge"><i data-lucide="sparkles"></i> Smile with Confidence</span>
+                    <h1 class="hero-title">Exceptional Care for Your Perfect Smile</h1>
+                    <p class="hero-desc">Experience world-class dental treatments tailored to your unique needs. Our modern clinic combines top-tier technology with a gentle, patient-first approach.</p>
+                    <div class="hero-actions">
+                        <a href="#booking" class="btn btn-primary btn-lg">Book Appointment <i data-lucide="calendar"></i></a>
+                        <a href="#services" class="btn btn-secondary btn-lg">Explore Services</a>
+                    </div>
+                    <div class="hero-trust">
+                        <div class="trust-stars">
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                        </div>
+                        <span class="trust-text">Trusted by <strong>10,000+</strong> Happy Patients</span>
+                    </div>
+                </div>
+
+                <!-- Hero Image Column -->
+                <div class="hero-image-wrapper reveal-init">
+                    <div class="hero-image-backdrop"></div>
+                    <img src="assets/images/hero-dentist.png" alt="Dr. Sarah Jenkins - SmileCare Dental Lead Dentist" class="hero-image">
+                    
+                    <!-- Floating Cards -->
+                    <div class="floating-card card-rating">
+                        <div class="floating-card-icon"><i data-lucide="award"></i></div>
+                        <div class="floating-card-info">
+                            <h4>Top Clinic 2026</h4>
+                            <p>Excellence in Dental Care</p>
+                        </div>
+                    </div>
+
+                    <div class="floating-card card-support">
+                        <div class="floating-card-icon"><i data-lucide="shield-check"></i></div>
+                        <div class="floating-card-info">
+                            <h4>Safe & Sterile</h4>
+                            <p>100% Certified Hygiene</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container stats-grid reveal-init">
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="15">0</h3>
+                    <p class="stat-label">Years Experience</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="12000">0</h3>
+                    <p class="stat-label">Happy Patients</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="25">0</h3>
+                    <p class="stat-label">Specialist Doctors</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="99">0</h3>
+                    <p class="stat-label">Satisfaction Rate %</p>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- About Us Section -->
+        <section class="about-section" id="about">
+            <div class="container about-grid">
+                <!-- About Image Container -->
+                <div class="about-image-wrapper reveal-init">
+                    <div class="about-img-backdrop"></div>
+                    <img src="assets/images/about-clinic.png" alt="SmileCare Dental Clinic Interior Reception" class="about-image">
+                    <div class="experience-badge">
+                        <span class="exp-years">15+</span>
+                        <span class="exp-text">Years of Excellence</span>
+                    </div>
+                </div>
+
+                <!-- About Content -->
+                <div class="about-content reveal-init">
+                    <span class="section-badge">About Us</span>
+                    <h2 class="section-title">We Deliver the Highest Quality Dental Treatments</h2>
+                    <p class="section-desc">At SmileCare Dental, we have been serving families for over 15 years. Our focus is to deliver a comfortable and premium dental experience, utilizing cutting-edge dental tech and a group of highly qualified professionals.</p>
+                    
+                    <div class="about-features">
+                        <div class="about-feature-item">
+                            <div class="feature-icon"><i data-lucide="check-circle-2"></i></div>
+                            <div>
+                                <h4>Certified Professionals</h4>
+                                <p>Our dentists are globally trained and certified specialists.</p>
+                            </div>
+                        </div>
+                        <div class="about-feature-item">
+                            <div class="feature-icon"><i data-lucide="check-circle-2"></i></div>
+                            <div>
+                                <h4>State-of-the-Art Technology</h4>
+                                <p>We use premium 3D imaging, digital scans, and pain-free laser tools.</p>
+                            </div>
+                        </div>
+                        <div class="about-feature-item">
+                            <div class="feature-icon"><i data-lucide="check-circle-2"></i></div>
+                            <div>
+                                <h4>Sterilization Protocols</h4>
+                                <p>Strict infection control policies matching hospital standards.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#booking" class="btn btn-primary btn-lg mt-4">Schedule Your Visit</a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="container">
+                <div class="section-header reveal-init">
+                    <span class="section-badge">Patient Testimonials</span>
+                    <h2 class="section-title">What Our Patients Say</h2>
+                    <p class="section-desc">Discover how we've helped thousands of patients achieve their dream smiles in complete comfort.</p>
+                </div>
+
+                <!-- Slider Container -->
+                <div class="testimonials-slider-wrapper reveal-init">
+                    <div class="testimonials-slider">
+                        <!-- Slide 1 -->
+                        <div class="testimonial-slide active">
+                            <div class="testimonial-rating">
+                                <i data-lucide="star" class="star-filled"></i>
+                                <i data-lucide="star" class="star-filled"></i>
+                                <i data-lucide="star" class="star-filled"></i>
+                                <i data-lucide="star" class="star-filled"></i>
+                                <i data-lucide="star" class="star-filled"></i>
+                            </div>
+                            <p class="testimonial-quote">"The implants procedure was completely painless. Dr. Sarah Jenkins and her staff explained everything in detail. My smile looks so natural now! Highly recommend SmileCare Dental!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar-initials">MH</div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Michael Harris</h4>
+                                    <p class="author-sub">Implants Patient</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-rating">
+                                <i data-lucide="star" class="star-filled"></i>
+                                <i data-lucide="star" class="star-filled"></i>
+                                <i data-lucide="star" class="star-filled"></i>
+                                <i data-lucide="star" class="star-filled"></i>
+                                <i data-lucide="star" class="star-filled"></i>
+                            </div>
+                            <p class="testimonial-quote">"I got my Invisalign done with Dr. Marcus Vance. The treatment was smooth, fast, and very professional. The clinic interior feels like a premium lounge, very relaxing!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar-initials">EP</div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Emily Parker</h4>
+                                    <p class="author-sub">Invisalign Patient</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-rating">
+                                <i data-lucide="star" class="star-filled"></i>
+                                <i data-lucide="star" class="star-filled"></i>
+                                <i data-lucide="star" class="star-filled"></i>
+                                <i data-lucide="star" class="star-filled"></i>
+                                <i data-lucide="star" class="star-filled"></i>
+                            </div>
+                            <p class="testimonial-quote">"Bringing my 6-year-old daughter to Dr. Elena was the best decision. She was gentle and made the cleaning fun. My daughter is no longer scared of dentists!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar-initials">DR</div>
+                                <div class="author-info">
+                                    <h4 class="author-name">David Ramirez</h4>
+                                    <p class="author-sub">Parent of Pediatric Patient</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slider Controls -->
+                    <div class="slider-controls">
+                        <button class="slider-btn btn-prev" aria-label="Previous Testimonial"><i data-lucide="chevron-left"></i></button>
+                        <div class="slider-dots">
+                            <span class="dot active" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                        </div>
+                        <button class="slider-btn btn-next" aria-label="Next Testimonial"><i data-lucide="chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Appointment Booking Form Section -->
+        <section class="booking-section" id="booking">
+            <div class="container booking-grid">
+                <!-- Form Content Left -->
+                <div class="booking-content reveal-init">
+                    <span class="section-badge badge-light">Easy Booking</span>
+                    <h2 class="section-title text-white">Ready for a Brighter, Healthier Smile?</h2>
+                    <p class="section-desc text-slate-300">Fill out our quick appointment form, and our coordinator will contact you to confirm a date and time that fits your schedule.</p>
+                    
+                    <div class="booking-perks">
+                        <div class="perk-item">
+                            <i data-lucide="clock" class="perk-icon"></i>
+                            <span>Quick 24-hour response confirmation</span>
+                        </div>
+                        <div class="perk-item">
+                            <i data-lucide="calendar-check" class="perk-icon"></i>
+                            <span>Flexible schedules, open Saturdays</span>
+                        </div>
+                        <div class="perk-item">
+                            <i data-lucide="stethoscope" class="perk-icon"></i>
+                            <span>Free initial oral consultation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Panel Right -->
+                <div class="booking-form-card reveal-init">
+                    <h3 class="form-title">Request an Appointment</h3>
+                    <p class="form-subtitle">No payment required now. Confirm date in 24 hours.</p>
+
+                    <form id="appointment-form" novalidate>
+                        <!-- Form Error Banner -->
+                        <div class="form-error-banner" id="form-error-banner">
+                            Please correct the errors in the form before submitting.
+                        </div>
+                        <!-- Success Banner -->
+                        <div class="form-success-banner" id="form-success-banner">
+                            <i data-lucide="check-circle" class="success-icon"></i>
+                            <div>
+                                <h4>Appointment Requested!</h4>
+                                <p>Thank you. We will call/email you in 24 hours to confirm.</p>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Package Estimate Info -->
+                        <div id="booking-calculator-info" class="booking-calculator-info hidden">
+                            <div class="calc-info-header">
+                                <i data-lucide="calculator" class="calc-info-icon"></i>
+                                <span>Selected Cost Estimate Package:</span>
+                            </div>
+                            <div class="calc-info-details">
+                                <p id="booking-calculator-text"></p>
+                                <button type="button" id="calc-info-clear" class="calc-info-clear-btn" aria-label="Clear package estimate">&times; Clear Package</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="booking-name">Full Name</label>
+                            <div class="input-wrapper">
+                                <i data-lucide="user" class="input-icon"></i>
+                                <input type="text" id="booking-name" placeholder="John Doe" required>
+                            </div>
+                            <span class="error-msg" id="error-name">Name must be at least 3 letters.</span>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="booking-phone">Phone Number</label>
+                                <div class="input-wrapper">
+                                    <i data-lucide="phone" class="input-icon"></i>
+                                    <input type="tel" id="booking-phone" placeholder="+91 98765 00000" required>
+                                </div>
+                                <span class="error-msg" id="error-phone">Enter a valid phone number (10-15 digits).</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="booking-email">Email Address</label>
+                                <div class="input-wrapper">
+                                    <i data-lucide="mail" class="input-icon"></i>
+                                    <input type="email" id="booking-email" placeholder="john@example.com" required>
+                                </div>
+                                <span class="error-msg" id="error-email">Enter a valid email address.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="booking-treatment">Required Treatment</label>
+                                <div class="input-wrapper">
+                                    <i data-lucide="heart" class="input-icon"></i>
+                                    <select id="booking-treatment" required>
+                                        <option value="" disabled selected>Select service...</option>
+                                        <option value="teeth-cleaning">Teeth Cleaning</option>
+                                        <option value="dental-implants">Dental Implants</option>
+                                        <option value="root-canal">Root Canal Treatment</option>
+                                        <option value="teeth-whitening">Teeth Whitening</option>
+                                        <option value="braces-aligners">Braces & Aligners</option>
+                                        <option value="general-consultation">General Consultation</option>
+                                    </select>
+                                </div>
+                                <span class="error-msg" id="error-treatment">Please select a treatment.</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="booking-date">Preferred Date</label>
+                                <div class="input-wrapper">
+                                    <i data-lucide="calendar" class="input-icon"></i>
+                                    <input type="date" id="booking-date" required>
+                                </div>
+                                <span class="error-msg" id="error-date">Preferred date must be in the future.</span>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Time-Slot Picker -->
+                        <div class="form-group mt-3 hidden" id="time-slots-container">
+                            <label class="form-label-slots">Select Available Time Slot</label>
+                            <div class="time-slots-grid">
+                                <button type="button" class="time-slot-btn" data-time="09:00 AM">09:00 AM</button>
+                                <button type="button" class="time-slot-btn" data-time="10:30 AM">10:30 AM</button>
+                                <button type="button" class="time-slot-btn" data-time="11:30 AM">11:30 AM</button>
+                                <button type="button" class="time-slot-btn" data-time="02:00 PM">02:00 PM</button>
+                                <button type="button" class="time-slot-btn" data-time="03:30 PM">03:30 PM</button>
+                                <button type="button" class="time-slot-btn" data-time="05:00 PM">05:00 PM</button>
+                            </div>
+                            <input type="hidden" id="booking-time" required>
+                            <span class="error-msg" id="error-time">Please select a time slot for your appointment.</span>
+                        </div>
+
+                        <!-- Optional Notes Field -->
+                        <div class="form-group mt-3">
+                            <label for="booking-notes">Additional Notes (Optional)</label>
+                            <div class="input-wrapper">
+                                <i data-lucide="message-square" class="input-icon input-icon-top"></i>
+                                <textarea id="booking-notes" placeholder="Any special requests, allergies, or questions for the doctor..."></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full-width mt-3">
+                            Confirm Appointment Booking
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section no-map" id="contact">
+            <div class="container">
+                <!-- Contact Info -->
+                <div class="contact-info reveal-init">
+                    <span class="section-badge">Get in Touch</span>
+                    <h2 class="section-title">We'd Love to Hear From You</h2>
+                    <p class="section-desc">Have an emergency or want to enquire about pricing? Reach out to our receptionist via phone, email, or chat with us on WhatsApp.</p>
+
+                    <div class="contact-details">
+                        <!-- Address -->
+                        <div class="contact-card">
+                            <div class="contact-card-icon"><i data-lucide="map-pin"></i></div>
+                            <div class="contact-card-text">
+                                <h4>Our Location</h4>
+                                <p>128 Healthcare Ave, Medical Suite 400, Chicago, IL 60611</p>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="contact-card">
+                            <div class="contact-card-icon"><i data-lucide="phone-call"></i></div>
+                            <div class="contact-card-text">
+                                <h4>Call or Text</h4>
+                                <p>+91 98765 43210</p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="contact-card">
+                            <div class="contact-card-icon"><i data-lucide="mail"></i></div>
+                            <div class="contact-card-text">
+                                <h4>Email Address</h4>
+                                <p>care@smilecaredental.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp CTA -->
+                    <div class="whatsapp-cta-wrapper">
+                        <a href="https://wa.me/919876543210?text=Hi%20SmileCare%20Dental,%20I'd%20like%20to%20book%20an%20appointment!" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                            <i data-lucide="message-square" class="whatsapp-icon"></i>
+                            <span>Chat on WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <!-- Footer Col 1 -->
+            <div class="footer-col footer-about">
+                <a href="#" class="logo footer-logo">
+                    <i data-lucide="activity" class="logo-icon text-accent"></i>
+                    <span class="logo-text text-white">SmileCare<span class="text-accent">.</span></span>
+                </a>
+                <p class="footer-desc">SmileCare Dental is dedicated to providing premium oral healthcare, combining innovative treatments with strict clinical standards for optimal patient satisfaction.</p>
+                <div class="footer-socials-list">
+                    <a href="#" class="footer-social" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="#" class="footer-social" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                    <a href="#" class="footer-social" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="#" class="footer-social" aria-label="Youtube"><i data-lucide="youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Footer Col 2 -->
+            <div class="footer-col">
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="doctors.html">Meet Team</a></li>
+                    <li><a href="faqs.html">FAQs Help</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Footer Col 3 -->
+            <div class="footer-col">
+                <h4 class="footer-title">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html#cleaning">Teeth Cleaning</a></li>
+                    <li><a href="services.html#implants">Dental Implants</a></li>
+                    <li><a href="services.html#root-canal">Root Canal Care</a></li>
+                    <li><a href="services.html#whitening">Teeth Whitening</a></li>
+                    <li><a href="services.html#braces">Braces & Aligners</a></li>
+                </ul>
+            </div>
+
+            <!-- Footer Col 4 -->
+            <div class="footer-col">
+                <h4 class="footer-title">Newsletter</h4>
+                <p class="footer-desc">Subscribe to receive tips for daily dental hygiene and special clinic offers.</p>
+                <form class="footer-newsletter" id="newsletter-form">
+                    <input type="email" placeholder="Your Email" required aria-label="Email Address">
+                    <button type="submit" aria-label="Subscribe"><i data-lucide="send"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; 2026 SmileCare Dental. All Rights Reserved. Crafted for premium user experience.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Made with love credit -->
+    <div class="portfolio-footer-badge">
+        <p>Designed &amp; Developed with ❤️ by <a href="#" rel="noopener">Tejdeep</a> &nbsp;·&nbsp; Built with HTML, CSS &amp; Vanilla JS</p>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image lightbox">
+        <div class="lightbox-inner">
+            <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+            <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">&#8249;</button>
+            <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">&#8250;</button>
+            <div class="lightbox-img" id="lightbox-content" style="display:flex;align-items:center;justify-content:center;min-width:260px;min-height:200px;background:rgba(255,255,255,0.05);border-radius:16px;font-size:5rem;"></div>
+            <p class="lightbox-caption-text" id="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <!-- AI Dental Assistant Floating Chatbot -->
+    <div class="chatbot-widget" id="chatbot-widget">
+        <!-- Floating Bubble Toggle -->
+        <button class="chatbot-toggle" id="chatbot-toggle" aria-label="Open Dental Assistant">
+            <i data-lucide="message-circle" class="chat-icon-open"></i>
+            <i data-lucide="x" class="chat-icon-close hidden"></i>
+            <span class="chat-badge">1</span>
+        </button>
+
+        <!-- Chat Window -->
+        <div class="chat-window" id="chat-window">
+            <!-- Header -->
+            <div class="chat-header">
+                <div class="chat-doctor-profile">
+                    <div class="profile-avatar-wrapper">
+                        <div class="profile-avatar"><i data-lucide="bot"></i></div>
+                        <span class="profile-status-dot"></span>
+                    </div>
+                    <div class="profile-details">
+                        <h4>Dr. Byte (AI Assistant)</h4>
+                        <p>Active | Smiles Expert</p>
+                    </div>
+                </div>
+                <button class="chat-minimize" id="chat-minimize" aria-label="Minimize Chat"><i data-lucide="minus"></i></button>
+            </div>
+
+            <!-- Messages Logs -->
+            <div class="chat-body" id="chat-body">
+                <div class="chat-msg bot-msg">
+                    <p>Hello! Welcome to SmileCare Dental. 👋 I'm Dr. Byte, your AI Dental Assistant.</p>
+                </div>
+                <div class="chat-msg bot-msg">
+                    <p>How can I help you today? Please choose one of the options below or type your question.</p>
+                </div>
+            </div>
+
+            <!-- Quick Suggestions Menu -->
+            <div class="chat-suggestions" id="chat-suggestions">
+                <button class="suggestion-btn" data-intent="faq">🦷 Common Questions</button>
+                <button class="suggestion-btn" data-intent="services">💼 Recommend Services</button>
+                <button class="suggestion-btn" data-intent="booking">📅 Book Appointment</button>
+                <button class="suggestion-btn" data-intent="hours">⏰ Operating Hours</button>
+            </div>
+
+            <!-- Input Bar -->
+            <form class="chat-input-bar" id="chat-input-bar">
+                <input type="text" id="chat-text-input" placeholder="Type your message here..." required aria-label="Type message">
+                <button type="submit" aria-label="Send Message"><i data-lucide="send"></i></button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- Main JS Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- Rounded modern premium teal tooth icon -->
+  <path d="M50,12 C40,12 31,14 25,20 C18,27 17,37 17,49 C17,62 22,74 27,81 C32,88 39,88 44,88 C46,88 48,86 50,84 C52,86 54,88 56,88 C61,88 68,88 73,81 C78,74 83,62 83,49 C83,37 82,27 75,20 C69,14 60,12 50,12 Z" fill="#0d9488" />
+  <!-- Highlight shine on the left top corner for a 3D glassmorphic effect -->
+  <path d="M35,22 C30,24 25,29 23,34 C21,39 21,45 23,50 C24,49 26,47 28,47 C30,47 32,49 33,51 C35,48 38,46 42,46 C45,46 47,48 48,50 C49,45 49,39 47,34 C45,29 40,24 35,22 Z" fill="#ffffff" opacity="0.4" />
+  <!-- Subtle inner curve details -->
+  <path d="M50,22 C48,22 47,23 47,25 L47,65 C47,67 48,68 50,68 C52,68 53,67 53,65 L53,25 C53,23 52,22 50,22 Z" fill="#ffffff" opacity="0.2" />
+</svg>
