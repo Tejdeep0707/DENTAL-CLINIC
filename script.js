@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
      4. Active Nav Link Highlighting on Scroll
      ========================================== */
   const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('.nav-desktop .nav-link');
+  const navLinks = document.querySelectorAll('.nav-desktop .nav-link, .nav-desktop .nav-link-sub');
 
   const highlightNavOnScroll = () => {
     let scrollPos = window.scrollY || document.documentElement.scrollTop;
