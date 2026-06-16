@@ -17,34 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  // 1. Precise Knowledge Base for Doctor Byte
+  // 1. Precise Knowledge Base for Doctor Byte (Reordered to prioritize specific treatments)
   const knowledgeBase = {
     greetings: {
       keywords: ['hello', 'hi', 'hey', 'greetings', 'morning', 'afternoon', 'evening', 'yo', 'halo'],
       response: "Hello! 👋 I'm **Doctor Byte**, your Aura Dental digital assistant. How can I help you today? You can ask me about our services, pricing, specialists, operating hours, or how to book an appointment!"
     },
-    services: {
-      keywords: ['service', 'treatment', 'procedure', 'teeth', 'do you do', 'scaling', 'cleaning', 'invisalign', 'whitening', 'implant', 'aligner'],
-      response: "At **Aura Dental**, we offer premium services including:\n\n" +
-                "• **Zoom Laser Teeth Whitening** (₹5,000+)\n" +
-                "• **Invisalign Clear Aligners** (₹45,000+)\n" +
-                "• **Dental Implants** (₹25,000+)\n" +
-                "• **Ultrasonic Deep Cleaning & Scaling** (₹1,500+)\n" +
-                "• **Dental Consultations** (₹500+)\n\n" +
-                "Would you like details on a specific treatment?"
-    },
-    pricing: {
-      keywords: ['price', 'pricing', 'cost', 'fee', 'charge', 'how much', 'rate', 'rupee', 'rs', 'inr'],
-      response: "We maintain 100% transparent pricing at Aura Dental. Here are our starting fees:\n\n" +
-                "• **Teeth Whitening**: From ₹5,000\n" +
-                "• **Clear Aligners (Invisalign)**: From ₹45,000\n" +
-                "• **Dental Implants**: From ₹25,000\n" +
-                "• **Deep Cleaning**: From ₹1,500\n" +
-                "• **Consultation Fee**: ₹500\n\n" +
-                "We accept credit cards, digital payments, and offer **0% interest EMI options** for aligners and implants."
-    },
     aligners: {
-      keywords: ['aligner', 'invisalign', 'clear braces', 'braces', 'straighten', 'crooked', 'crowding'],
+      keywords: ['aligner', 'aligners', 'invisalign', 'clear braces', 'braces', 'straighten', 'crooked', 'crowding'],
       response: "Our **Invisalign Clear Aligners** (starting from ₹45,000) are custom-designed, comfortable, and virtually invisible. They straighten teeth faster than traditional metal braces. 0% EMI payment schemes are available. Would you like to consult our specialist?"
     },
     implants: {
@@ -59,14 +39,34 @@ document.addEventListener('DOMContentLoaded', () => {
       keywords: ['clean', 'cleaning', 'scaling', 'plaque', 'tartar', 'polish', 'hygiene'],
       response: "Our **Ultrasonic Deep Cleaning & Scaling** (starting from ₹1,500) eliminates gum plaque buildup and freshens breath. We recommend a cleaning session once every 6 months to prevent dental decay."
     },
+    services: {
+      keywords: ['service', 'services', 'treatment', 'treatments', 'procedure', 'procedures', 'teeth', 'do you do'],
+      response: "At **Aura Dental**, we offer premium services including:\n\n" +
+                "• **Zoom Laser Teeth Whitening** (₹5,000+)\n" +
+                "• **Invisalign Clear Aligners** (₹45,000+)\n" +
+                "• **Dental Implants** (₹25,000+)\n" +
+                "• **Ultrasonic Deep Cleaning & Scaling** (₹1,500+)\n" +
+                "• **Dental Consultations** (₹500+)\n\n" +
+                "Would you like details on a specific treatment?"
+    },
+    pricing: {
+      keywords: ['price', 'prices', 'pricing', 'cost', 'costs', 'fee', 'fees', 'charge', 'charges', 'how much', 'rate', 'rates', 'rupee', 'rupees', 'rs', 'inr'],
+      response: "We maintain 100% transparent pricing at Aura Dental. Here are our starting fees:\n\n" +
+                "• **Teeth Whitening**: From ₹5,000\n" +
+                "• **Clear Aligners (Invisalign)**: From ₹45,000\n" +
+                "• **Dental Implants**: From ₹25,000\n" +
+                "• **Deep Cleaning**: From ₹1,500\n" +
+                "• **Consultation Fee**: ₹500\n\n" +
+                "We accept credit cards, digital payments, and offer **0% interest EMI options** for aligners and implants."
+    },
     doctors: {
-      keywords: ['doctor', 'dentist', 'specialist', 'sharma', 'verma', 'mds', 'who works', 'staff'],
+      keywords: ['doctor', 'doctors', 'dentist', 'dentists', 'specialist', 'specialists', 'sharma', 'verma', 'mds', 'who works', 'staff'],
       response: "Our clinic is led by top-tier MDS specialists:\n\n" +
                 "• **Dr. A. Sharma** (BDS, MDS Orthodontics): A clear aligner and smile-designing specialist with over 12+ years of experience.\n" +
                 "• **Dr. R. Verma** (BDS, MDS Endodontics): An expert in titanium implants, pain-free root canals, and micro-dentistry with 10+ years of experience."
     },
     hours: {
-      keywords: ['hour', 'time', 'timing', 'open', 'close', 'schedule', 'when', 'sunday', 'saturday', 'weekday'],
+      keywords: ['hour', 'hours', 'time', 'times', 'timing', 'timings', 'open', 'close', 'schedule', 'when', 'sunday', 'saturday', 'weekday'],
       response: "Aura Dental is open 7 days a week:\n\n" +
                 "• **Monday - Friday**: 7:00 AM - 10:00 PM\n" +
                 "• **Saturday - Sunday**: 8:00 AM - 11:00 PM\n\n" +
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
       response: "We are located at:\n**Road No. 36, Jubilee Hills, Hyderabad, Telangana 500033**.\n\nWe are right on the main road and offer dedicated free parking slots for our dental patients."
     },
     booking: {
-      keywords: ['book', 'appointment', 'reserve', 'schedule', 'visit', 'slot', 'intake', 'consultation'],
+      keywords: ['book', 'appointment', 'appointments', 'reserve', 'schedule', 'visit', 'slot', 'slots', 'intake', 'consultation'],
       response: "You can book your clinical visit in two ways:\n\n" +
                 "1. Scroll to the **Schedule A Visit** form on our website, fill out your details, and submit.\n" +
                 "2. Click the **[Book on WhatsApp]** button to text our front desk receptionist directly (+91 99999 99999) for a slot in under 15 minutes."
@@ -129,14 +129,20 @@ document.addEventListener('DOMContentLoaded', () => {
     chatMessages.scrollTop = chatMessages.scrollHeight;
   };
 
-  // 3. Simulated Response Logic
+  // 3. Simulated Response Logic (Word boundary matched regex)
   const generateBotResponse = (userInput) => {
     const cleanInput = userInput.toLowerCase().trim();
     
     // Find matching topic in knowledgeBase
     for (const key in knowledgeBase) {
       const topic = knowledgeBase[key];
-      const match = topic.keywords.some(keyword => cleanInput.includes(keyword));
+      const match = topic.keywords.some(keyword => {
+        // Escape regex special chars
+        const escaped = keyword.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+        // Check for whole word match using boundary \b
+        const regex = new RegExp('\\b' + escaped + '\\b', 'i');
+        return regex.test(cleanInput);
+      });
       if (match) {
         return topic.response;
       }
@@ -230,8 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function formatMarkdown(text) {
     // Simple bold markdown converter: **text** -> <strong>text</strong>
-    let html = text.replace(/\*\/(.*?)\*\//g, '<strong>$1</strong>'); // fallback support
-    html = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    let html = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     // Simple line break converter: \n -> <br>
     html = html.replace(/\n/g, '<br>');
     return html;
